@@ -4,7 +4,7 @@ import com.gromber05.act3t3.domainP.Producto
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "categorias")
+@Table(name = "categoria")
 data class Categoria(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
