@@ -16,7 +16,7 @@ class Categoria() {
     var descripcion: String? = null
 
     @OneToMany(mappedBy = "categoria", cascade = [CascadeType.ALL], orphanRemoval = true)
-    var productos: MutableList<Producto> = mutableListOf()
+    var productos: MutableList<Productos> = mutableListOf()
 
     constructor(nombre: String, descripcion: String? = null) : this() {
         this.nombre = nombre

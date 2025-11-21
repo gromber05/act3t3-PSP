@@ -1,14 +1,14 @@
 package com.gromber05.act3t3.mappers
 
 import com.gromber05.act3t3.domain.Categoria
-import com.gromber05.act3t3.domain.Producto
+import com.gromber05.act3t3.domain.Productos
 import com.gromber05.act3t3.dto.ProductoDto
 import org.springframework.stereotype.Component
 
 @Component
 class ProductoMapper {
 
-    fun toDto(entity: Producto): ProductoDto =
+    fun toDto(entity: Productos): ProductoDto =
         ProductoDto(
             id = entity.id,
             nombre = entity.nombre,
@@ -17,8 +17,8 @@ class ProductoMapper {
             categoriaId = entity.categoria.id!!
         )
 
-    fun toEntity(dto: ProductoDto, categoria: Categoria): Producto =
-        Producto(
+    fun toEntity(dto: ProductoDto, categoria: Categoria): Productos =
+        Productos(
             id = dto.id,
             nombre = dto.nombre,
             precio = dto.precio,
