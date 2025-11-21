@@ -1,20 +1,26 @@
 package com.gromber05.act3t3.domain
 
-import com.gromber05.act3t3.domain.Producto
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "categoria")
-data class Categoria(
+class Categoria() {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+    var id: Long? = null
 
     @Column(nullable = false, unique = true)
-    val nombre: String,
+    var nombre: String = ""
 
-    val descripcion: String? = null,
+    var descripcion: String? = null
 
     @OneToMany(mappedBy = "categoria", cascade = [CascadeType.ALL], orphanRemoval = true)
-    val productos: MutableList<Producto> = mutableListOf()
-)
+    var productos: MutableList<Producto> = mutableListOf()
+
+    constructor(nombre: String, descripcion: String? = null) : this() {
+        this.nombre = nombre
+        this.descripcion = descripcion
+    }
+}
+
