@@ -41,15 +41,14 @@ class CategoriaService(
 
     @Transactional
     fun update(id: Long, dto: CategoriaDto): CategoriaDto {
-        val existing = categoriaRepository.findById(id)
-            .orElseThrow { NotFoundException("Categoría con id $id no encontrada") }
+        val categoria = categoriaRepository.findById(id)
+            .orElseThrow { RuntimeException("Categoria con id $id no encontrada") }
 
-        val updated = existing.copy(
-            nombre = dto.nombre,
-            descripcion = dto.descripcion
-        )
+        categoria.nombre = dto.nombre
+        categoria.descripcion = dto.descripcion
 
-        return categoriaMapper.toDto(categoriaRepository.save(updated))
+        val guardada = categoriaRepository.save(categoria)
+        return categoriaMapper.toDto(guardada)
     }
 
     @Transactional

@@ -11,19 +11,22 @@ class CategoriaMapper(
     private val productoMapper: ProductoMapper
 ) {
 
-    fun toDto(entity: Categoria): CategoriaDto =
-        CategoriaDto(
+    fun toDto(entity: Categoria): CategoriaDto {
+        return CategoriaDto(
             id = entity.id,
             nombre = entity.nombre,
             descripcion = entity.descripcion
         )
+    }
 
-    fun toEntity(dto: CategoriaDto): Categoria =
-        Categoria(
-            id = dto.id,
-            nombre = dto.nombre,
-            descripcion = dto.descripcion
-        )
+    fun toEntity(dto: CategoriaDto): Categoria {
+        val categoria = Categoria()
+        categoria.id = dto.id
+        categoria.nombre = dto.nombre
+        categoria.descripcion = dto.descripcion
+        return categoria
+    }
+
 
     fun toCategoriaConProductosDto(entity: Categoria): CategoriaConProductosDto =
         CategoriaConProductosDto(
@@ -32,4 +35,6 @@ class CategoriaMapper(
             descripcion = entity.descripcion,
             productos = entity.productos.map { productoMapper.toDto(it) }
         )
+
+
 }
