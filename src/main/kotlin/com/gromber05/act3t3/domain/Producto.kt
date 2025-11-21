@@ -1,4 +1,4 @@
-package com.gromber05.act3t3.domainP
+package com.gromber05.act3t3.domain
 
 import com.gromber05.act3t3.domain.Categoria
 import jakarta.persistence.*

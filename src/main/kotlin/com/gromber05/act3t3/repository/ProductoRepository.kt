@@ -1,6 +1,6 @@
 package com.gromber05.act3t3.repository
 
-import com.gromber05.act3t3.domainP.Producto
+import com.gromber05.act3t3.domain.Producto
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ProductoRepository : JpaRepository<Producto, Long> {

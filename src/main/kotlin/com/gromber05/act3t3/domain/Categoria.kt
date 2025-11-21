@@ -1,6 +1,6 @@
 package com.gromber05.act3t3.domain
 
-import com.gromber05.act3t3.domainP.Producto
+import com.gromber05.act3t3.domain.Producto
 import jakarta.persistence.*
 
 @Entity

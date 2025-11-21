@@ -1,7 +1,7 @@
 package com.gromber05.act3t3.mappers
 
 import com.gromber05.act3t3.domain.Categoria
-import com.gromber05.act3t3.domainP.Producto
+import com.gromber05.act3t3.domain.Producto
 import com.gromber05.act3t3.dto.ProductoDto
 import org.springframework.stereotype.Component
 
